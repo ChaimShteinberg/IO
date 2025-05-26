@@ -15,7 +15,7 @@ namespace IO
             string output = AtbashEncrypt(input);
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string filePath = Path.Combine(desktopPath, "secret.txt");
-            File.AppendAllText(filePath, output);
+            File.WriteAllText(filePath, output);
             string fileText = File.ReadAllText(filePath);
             string fileOut = AtbashEncrypt(fileText);
             Console.WriteLine(fileOut);
